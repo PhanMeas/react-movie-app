@@ -1,7 +1,7 @@
-import React from 'react'
-import './App.css'
+import React from "react";
+import "./App.css";
 // TODO: learn how imports work
-import { TextField } from '@material-ui/core/'
+import { TextField } from "@material-ui/core/";
 
 class App extends React.Component {
   // local state object
@@ -9,8 +9,8 @@ class App extends React.Component {
     // We will set the results from the OMDB API here
     result: {},
     // Initial value of the search input box
-    search: ''
-  }
+    search: ""
+  };
 
   // What is the component life-cycle methods
   // componentDidMount first load
@@ -21,7 +21,11 @@ class App extends React.Component {
   // TODO: searchMovies method to invoke our API method
 
   // TODO: handler for input change of input box
-
+  handleInputChange = event => {
+    console.log(event.target.value);
+    const movieName = event.target.value;
+    this.setState({ search: movieName });
+  };
   // TODO: handler for submit button getting clicked
 
   render() {
@@ -29,9 +33,9 @@ class App extends React.Component {
       <div className="App">
         <table
           style={{
-            backgroundColor: '#000',
-            display: 'block',
-            color: '#fff'
+            backgroundColor: "#000",
+            display: "block",
+            color: "#fff"
           }}
         >
           <tbody>
@@ -48,16 +52,16 @@ class App extends React.Component {
         </table>
         <TextField
           id="standard-name"
-          label="Name"
+          label="Movie Search"
           // value={values.name}
-          // onChange={handleChange('name')}
+          onChange={this.handleInputChange}
           margin="normal"
         />
         {/* TODO: Add submit button */}
         {/* TODO: add card with movie data */}
       </div>
-    )
+    );
   }
 }
 
-export default App
+export default App;
