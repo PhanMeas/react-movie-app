@@ -1,7 +1,7 @@
-import React from "react";
-import "./App.css";
+import React from 'react'
+import './App.css'
 // TODO: learn how imports work
-import { TextField, Button } from "@material-ui/core/";
+import { TextField, Button } from '@material-ui/core/'
 
 class App extends React.Component {
   // local state object
@@ -9,8 +9,8 @@ class App extends React.Component {
     // We will set the results from the OMDB API here
     result: {},
     // Initial value of the search input box
-    search: ""
-  };
+    search: ''
+  }
 
   // What is the component life-cycle methods
   // componentDidMount first load
@@ -22,23 +22,24 @@ class App extends React.Component {
 
   // TODO: handler for input change of input box
   handleInputChange = event => {
-    console.log(event.target.value);
-    const movieName = event.target.value;
-    this.setState({ search: movieName });
-  };
+    console.log(event.target.value)
+    const movieName = event.target.value
+    this.setState({ search: movieName })
+  }
   // TODO: handler for submit button getting clicked
   handleFormSubmit = event => {
-  event.preventDefault()
-  console.log('FormSubmit')
-  };
+    event.preventDefault()
+    console.log('FormSubmit')
+  }
+
   render() {
     return (
       <div className="App">
         <table
           style={{
-            backgroundColor: "#000",
-            display: "block",
-            color: "#fff"
+            backgroundColor: '#000',
+            display: 'block',
+            color: '#fff'
           }}
         >
           <tbody>
@@ -63,15 +64,15 @@ class App extends React.Component {
         {/* TODO: Add submit button */}
         <Button
           onClick={this.handleFormSubmit}
-          color={"primary"}
-          variant={"contained"}
+          color={'primary'}
+          variant={'contained'}
         >
           find a movie
         </Button>
         {/* TODO: add card with movie data */}
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

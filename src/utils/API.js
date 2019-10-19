@@ -5,5 +5,6 @@ const APIKEY = '&apikey=trilogy'
 export default {
   search: function(query) {
     // TODO: Finish method to communicate with OMDB
+    return axios.get(BASEURL + query + APIKEY)
   }
 }
