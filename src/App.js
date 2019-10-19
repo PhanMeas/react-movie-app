@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 // TODO: learn how imports work
-import { TextField } from "@material-ui/core/";
+import { TextField, Button } from "@material-ui/core/";
 
 class App extends React.Component {
   // local state object
@@ -27,7 +27,10 @@ class App extends React.Component {
     this.setState({ search: movieName });
   };
   // TODO: handler for submit button getting clicked
-
+  handleFormSubmit = event => {
+  event.preventDefault()
+  console.log('FormSubmit')
+  };
   render() {
     return (
       <div className="App">
@@ -58,6 +61,13 @@ class App extends React.Component {
           margin="normal"
         />
         {/* TODO: Add submit button */}
+        <Button
+          onClick={this.handleFormSubmit}
+          color={"primary"}
+          variant={"contained"}
+        >
+          find a movie
+        </Button>
         {/* TODO: add card with movie data */}
       </div>
     );
