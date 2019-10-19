@@ -2,6 +2,7 @@ import React from 'react'
 import './App.css'
 // TODO: learn how imports work
 import { TextField, Button } from '@material-ui/core/'
+import API from './utils/API'
 
 class App extends React.Component {
   // local state object
@@ -19,6 +20,14 @@ class App extends React.Component {
   }
 
   // TODO: searchMovies method to invoke our API method
+  searchMovies = movieName => {
+    API.search(movieName)
+      .then(response => {
+        console.log('Data from OMDB', response.data)
+        this.setState({ result: response.data })
+      })
+      .catch(err => console.log(err))
+  }
 
   // TODO: handler for input change of input box
   handleInputChange = event => {
@@ -30,6 +39,7 @@ class App extends React.Component {
   handleFormSubmit = event => {
     event.preventDefault()
     console.log('FormSubmit')
+    this.searchMovies(this.state.search)
   }
 
   render() {
