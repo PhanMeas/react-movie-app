@@ -56,11 +56,11 @@ class App extends React.Component {
           <tbody>
             <tr>
               <td>
-                <img src="movie_finder.png" />
+                <img src="movie_finder.jpeg" />
               </td>
               <td width="8" />
               <td>
-                <h3> Greatest Movie Finder</h3>
+                <h3>  Beast! Movie Finder</h3>
               </td>
             </tr>
           </tbody>
@@ -84,10 +84,37 @@ class App extends React.Component {
         <Card>
           {this.state.result.Title ? (
             <CardContent>
-              <h1>{this.state.result.Title}</h1>
-              <img alt={"Movie"} src={this.state.result.Poster} />
-              <p>
+                <h1>{this.state.result.Title}</h1>
+                <img alt={"Movie"} src={this.state.result.Poster} />
+                <p> Plot:
+                {this.state.result.Plot}
+                </p>
+                <p> Actors:
                 {this.state.result.Actors}
+                </p>
+                <p> Awards: 
+                {this.state.result.Awards}
+                </p>
+                <p> Country: 
+                {this.state.result.Country}
+                </p>
+                <p> Director: 
+                {this.state.result.Director}
+                </p>
+                <p> Genre: 
+                {this.state.result.Genre}
+                </p>
+                <p> Language: 
+                {this.state.result.Language}
+                </p>
+                <p> Rated: 
+                {this.state.result.Rated}
+                </p>
+                <p> Release Date:
+                {this.state.result.Released}
+                </p>
+                <p> RunTime: 
+                {this.state.result.Runtime}
               </p>
             </CardContent>
           ) : (
